@@ -4,7 +4,7 @@ import { SessionService } from '../../services/SessionService';
 
 @Component({
     selector: 'as-navbar',
-    templateUrl: 'app/shared/navbar/navbar.html',
+    templateUrl: 'navbar.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarComponent {

@@ -2,16 +2,14 @@ import { Component, OnInit, Input} from '@angular/core';
 import { UserService} from '../services/user.service';
 import { SessionService} from '../../services/SessionService';
 import { User} from '../models/user';
-import { ToasterService} from 'angular2-toaster/angular2-toaster';
 import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
 import { ValidationService } from '../../Validators/ValidationService';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'as-profile',
-    templateUrl: 'app/Account/templates/userprofile.html',
+    templateUrl: '../templates/userprofile.html',
     styleUrls: [
-        'app/Account/styles/userprofile.css'
+        '../styles/userprofile.css'
     ],
     providers: [FormBuilder]
 })
@@ -30,7 +28,6 @@ export class ProfileComponent implements OnInit {
     constructor(
         private _userService: UserService,
         private _sessionService: SessionService,
-        private _toasterService: ToasterService,
         private fb: FormBuilder
     ) {
         this.isAuthenticated = this._sessionService.isLoggedIn();
@@ -84,7 +81,7 @@ export class ProfileComponent implements OnInit {
                 this.loading = true;
                 this.user = res;
                 this.showSave = false;
-                this._toasterService.pop('success', 'Saved Changes', this.user.full_name);
+                this.loading = false;
                 this.loading = false;
             });
 

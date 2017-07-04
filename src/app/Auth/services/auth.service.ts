@@ -12,11 +12,11 @@ import {SessionService} from '../../services/SessionService';
 
 export class AuthService extends BaseService {
 
-    public _basePath = 'api-token-auth/';
+    public _basePath = 'api-auth/';
 
     constructor(public http: Http,
                 public _httpSettings: HttpSettingsService,
-                public _sesstionService: SessionService,
+                public _sessionService: SessionService,
                 private _authToken: AuthToken
     ) {
         super(http, _httpSettings);
@@ -48,7 +48,7 @@ export class AuthService extends BaseService {
                 this.singleObject = toReturn;
                 this.singleO.emit(toReturn);
                 this._authToken.setToken(toReturn.token);
-                this._sesstionService.actionLoggedIn();
+                this._sessionService.actionLoggedIn();
                 return toReturn;
             })
             .catch(this.handleError);
@@ -63,7 +63,7 @@ export class AuthService extends BaseService {
             .map(res => {
                 let toReturn = <any>res.json();
                 this._authToken.setToken(toReturn.token);
-                this._sesstionService.logout();
+                this._sessionService.logout();
                 return toReturn;
             })
             .catch(this.handleError);

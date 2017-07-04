@@ -5,8 +5,9 @@ import {PasswordResetChangeComponent} from './components/password_reset_change.c
 
 
 export const AuthRoutes = [
-    { path: 'auth/login',  component: AuthComponent },
+
+    { path: '',  component: AuthComponent },
     { path: 'password/reset',  component: PasswordResetComponent },
-    { path: 'password/reset/:uid/:token',  component: PasswordResetChangeComponent },
+    { path: 'password/reset/:uid/:token',  component: PasswordResetChangeComponent }
 
 ];

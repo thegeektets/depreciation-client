@@ -1,36 +1,42 @@
-<div class="clearfix">
-    <div class="col-sm-4 col-sm-offset-4">
-        <div class="panel panel-default" style="margin-top: 20px;">
-            <div class="panel-heading"><h3>SoccerGear Login</h3></div>
-            <div class="panel-body" style="margin-top: 10px;">
-                <as-loading *ngIf="loading"></as-loading>
+<div class="login_page clearfix">
+  <div class="container">
+    <div class="row">
+        <div class="col s8 offset-s2">
+            <div class="tunaweza_logo">
+
+            </div>
+            <div class="login_heading">
+              <h3> Tunaweza Asset Management </h3>
+            </div>
+
+            <div>
                 <div *ngIf="errorMsg" class="alert alert-danger alert-dismissable text-center">{{errorMsg}}</div>
                 <form  name="loginForm" #loginForm="ngForm" [ngStyle]="{'display': loading?'none':''}">
-                    <div class="form-group">
-                        <input
+                    <div class="input-field">
+                        <input  id="username"
                                 name="username"
                                 placeholder="username"
-                                class="form-control"
                                 [(ngModel)]="username"
                                 required
                         />
                     </div>
-                    <div class="form-group">
+                    <div class="input-field">
                         <input
+                                id="password"
                                 name="password"
-                                type="password"
                                 placeholder="password"
-                                class="form-control"
+                                type="password"
                                 [(ngModel)]="password"
                                 required
                         />
                     </div>
-                    <button (click)="login()" class="btn btn-block btn-primary" [disabled]="loginForm.form.valid == false">Login </button>
+                    <button (click)="login()" class="btn btn-submit" [disabled]="loginForm.form.valid == false">Login </button>
 
                 </form>
-                <a [routerLink]="['/password/reset/']" style="cursor: pointer;" >Forgot password? </a>
+                <a [routerLink]="['/password/reset/']"  class="forgot_link" >Forgot password? </a>
 
             </div>
         </div>
     </div>
+  </div>
 </div>

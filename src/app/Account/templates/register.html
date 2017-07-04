@@ -6,8 +6,7 @@
                 <h3 class="text-center">Thank you for registering.</h3>
             </div>
             <div class="panel-body" style="margin-top: 10px;" *ngIf="!registered">
-                <as-loading *ngIf="loading"></as-loading>
-                <div *ngIf="errorMsg" class="alert alert-danger alert-dismissable text-center">{{errorMsg}}</div>
+               <div *ngIf="errorMsg" class="alert alert-danger alert-dismissable text-center">{{errorMsg}}</div>
                 <form [formGroup]="form" [ngStyle]="{'display': loading?'none':''}" novalidate>
                     <div class="form-group">
                         <input

@@ -12,9 +12,9 @@ interface UrlParams {
 
 @Component({
     selector: 'as-auth',
-    templateUrl: 'app/Auth/templates/password_reset_change.html',
+    templateUrl: '../templates/password_reset_change.html',
     styleUrls: [
-        'app/Auth/styles/auth.css'
+        '../styles/auth.css'
     ],
      providers: [FormBuilder]
 })

@@ -6,9 +6,9 @@ import {Router} from '@angular/router';
 
 @Component({
     selector: 'as-auth',
-    templateUrl: 'app/Auth/templates/auth.html',
+    templateUrl: '../templates/auth.html',
     styleUrls: [
-        'app/Auth/styles/auth.css'
+        '../styles/auth.css'
     ]
 })
 

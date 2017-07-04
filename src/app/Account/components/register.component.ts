@@ -7,9 +7,9 @@ import { User } from '../models/user';
 
 @Component({
     selector: 'as-register',
-    templateUrl: 'app/Account/templates/register.html',
+    templateUrl: '../templates/register.html',
     styleUrls: [
-        'app/Account/styles/register.css'
+        '../styles/register.css'
     ],
     providers: [FormBuilder]
 })

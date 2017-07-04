@@ -1,0 +1,42 @@
+.tunaweza_logo{
+  background-image: url("../../../assets/tunaweza_logo.png");
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20vw;
+  margin: 0 auto;
+}
+.login_page {
+  background: linear-gradient(rgba(209,31,93,0.3) ,rgba(209,31,93,0.9)), url("../../../assets/tuna_login.jpg");
+  background-size: cover;
+  height: calc(100vh + 25px);
+  width: 100vw;
+  padding-top: 20vh;
+}
+.login_heading {
+  font-family: "Raleway";
+  font-weight: 200;
+  color: azure;
+  padding-bottom: 20px;
+  text-align: center;
+}
+h3 {
+  font-size: 25px;
+}
+input {
+    color: #fff;
+    font-family: "Raleway";
+}
+.btn, .btn-large {
+    background-color: #9BC01C;
+}
+.btn-submit {
+    text-align: center;
+    float: right;
+}
+.btn-submit:hover {
+    background-color: #FA6775;
+}
+.forgot_link {
+   color: #9BC01C;
+}
