@@ -1,0 +1,79 @@
+<div class="clearfix">
+    <div class="col-sm-4 col-sm-offset-4">
+        <div class="panel panel-default" style="margin-top: 20px;">
+            <div class="panel-heading"><h2>Register User</h2></div>
+            <div class="panel-body" style="margin-top: 10px;" *ngIf="registered">
+                <h3 class="text-center">Thank you for registering.</h3>
+            </div>
+            <div class="panel-body" style="margin-top: 10px;" *ngIf="!registered">
+                <as-loading *ngIf="loading"></as-loading>
+                <div *ngIf="errorMsg" class="alert alert-danger alert-dismissable text-center">{{errorMsg}}</div>
+                <form [formGroup]="form" [ngStyle]="{'display': loading?'none':''}" novalidate>
+                    <div class="form-group">
+                        <input
+                                formControlName="email"
+                                name="email"
+                                placeholder="email address"
+                                class="form-control"
+                                type="email"
+                                required
+                        />
+                        <p *ngIf="errors && errors.email" class="alert alert-danger">{{ errors.email }}</p>
+                    </div>
+                    <div class="form-group">
+                        <input
+                                formControlName="username"
+                                name="username"
+                                placeholder="username"
+                                class="form-control"
+                                required
+                        />
+                        <p *ngIf="errors && errors.username" class="alert alert-danger">{{ errors.username }}</p>
+                    </div>
+                    <div class="form-group">
+                        <input
+                                formControlName="first_name"
+                                name="first_name"
+                                placeholder="first name"
+                                class="form-control"
+                                required
+                        />
+                        <p *ngIf="errors && errors.first_name" class="alert alert-danger">{{ errors.first_name }}</p>
+                    </div>
+                    <div class="form-group">
+                        <input
+                                formControlName="last_name"
+                                name="last_name"
+                                placeholder="last name"
+                                class="form-control"
+                                required
+                        />
+                        <p *ngIf="errors && errors.last_name" class="alert alert-danger">{{ errors.last_name }}</p>
+                    </div>
+                    <div class="form-group">
+                        <input
+                                formControlName="password"
+                                name="password"
+                                type="password"
+                                placeholder="password"
+                                class="form-control"
+                                required
+                        />
+                        <p *ngIf="errors && errors.password" class="alert alert-danger">{{ errors.password }}</p>
+                    </div>
+                    <div class="form-group">
+                        <input
+                                formControlName="password_again"
+                                name="password_again"
+                                type="password"
+                                placeholder="confirm password"
+                                class="form-control"
+                                required
+                        />
+                    </div>
+                    <button (click)="registerUser()" class="btn btn-block btn-primary" [disabled]="!form.valid">Submit Information</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

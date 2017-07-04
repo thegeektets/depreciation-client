@@ -1,0 +1,34 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">{{brand}}</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="['/']">Home</a></li>
+        <li><a [routerLink]="['/products']">Products</a></li>
+        <li><a [routerLink]="['/cart']">Cart <span class="badge" *ngIf="cartTotal > 0">{{cartTotal}}</span></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a *ngIf="!isAuthenticated" [routerLink]="['/auth/login']">Login</a></li>
+        <li><a *ngIf="!isAuthenticated" [routerLink]="['/account/register']">Register</a></li>
+        <li *ngIf="isAuthenticated" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">{{ userDisplayName }} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a *ngIf="isAdmin || isSuperUser"  [routerLink]="['/admin/dashboard/']" style="cursor: pointer;" >Admin Dashboard</a></li>
+            <li><a *ngIf="isAuthenticated"  [routerLink]="['/account/orders/']" style="cursor: pointer;" >My Orders</a></li>
+            <li><a *ngIf="isAuthenticated"  [routerLink]="['/user/profile/']" style="cursor: pointer;" >Profile</a></li>
+            <li><a *ngIf="isAuthenticated" (click)="logout()" style="cursor: pointer;">Logout</a></li>
+
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
