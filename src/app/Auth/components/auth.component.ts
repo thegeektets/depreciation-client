@@ -32,16 +32,24 @@ export class AuthComponent {
         this.errorMsg = null;
         this._authService.login(JSON.stringify({'username': this.username, 'password': this.password}))
             .subscribe((res) => {
-                    this.loading = false;
+                  this.loading = false;
+                  console.log(res.token);
+                  if(res.token !== ''){
+                      this._authToken.setToken(res.token);
+                      this.loadDashboard();
+                  }
                 },
                 (errorMsg) => {
                     this.loading = false;
                     if (errorMsg.hasOwnProperty('non_field_errors')) {
                         this.errorMsg = errorMsg.non_field_errors;
                     }
-                    this.password = '';
                 }
             );
+    }
+
+    loadDashboard() {
+       this._router.navigateByUrl('dashboard');
     }
 
 

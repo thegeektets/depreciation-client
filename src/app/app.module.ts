@@ -15,10 +15,13 @@ import { Routes } from '@angular/router';
 import {AuthRoutes} from './Auth/auth.routes';
 import {AccountRoutes} from './Account/account.routes';
 import { HttpModule } from "@angular/http";
+import { DashboardModule } from "./Dashboard/dashboard.module";
+import { DashboardRoutes } from "./Dashboard/dashboard.routes";
 
 const appRoutes: Routes = [
     ...AuthRoutes,
-    ...AccountRoutes
+    ...AccountRoutes,
+    ...DashboardRoutes
 ];
 
 
@@ -29,6 +32,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpModule,
+    DashboardModule,
     AuthModule,
     AccountModule,
     RouterModule.forRoot(

@@ -10,7 +10,9 @@
             </div>
 
             <div>
-                <div *ngIf="errorMsg" class="alert alert-danger alert-dismissable text-center">{{errorMsg}}</div>
+                <div *ngIf="errorMsg" class="alert alert-danger alert-dismissable">
+                        {{errorMsg}}
+                </div>
                 <form  name="loginForm" #loginForm="ngForm" [ngStyle]="{'display': loading?'none':''}">
                     <div class="input-field">
                         <input  id="username"

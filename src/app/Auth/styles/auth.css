@@ -40,3 +40,10 @@ input {
 .forgot_link {
    color: #9BC01C;
 }
+.alert.alert-danger.alert-dismissable {
+    text-align: center;
+    color: #fff;
+    font-family: "Raleway";
+    background: #FFD64D;
+    padding: 10px;
+}
