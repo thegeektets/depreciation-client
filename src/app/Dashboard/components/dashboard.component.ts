@@ -25,26 +25,11 @@ export class DashboardComponent implements OnInit {
     ) {
         this.isAuthenticated = this._sessionService.isLoggedIn();
         if (this.isAuthenticated) {
-            this.buildForm();
         }
     }
 
     ngOnInit() {
     //
-    }
-
-    buildForm() {
-        this.form = new FormGroup({
-            full_name: new FormControl('', Validators.required),
-            username: new FormControl('', Validators.required),
-            email: new FormControl('', Validators.compose([Validators.required, ValidationService.emailValidator])),
-            mobile_number: new FormControl('', Validators.required),
-            date_joined: new FormControl('', Validators.required),
-            default_billing_address: new FormControl('', Validators.required),
-            default_shipping_address: new FormControl('', Validators.required),
-            mpesa_phone_number: new FormControl('', Validators.required)
-        });
-
     }
 
 
