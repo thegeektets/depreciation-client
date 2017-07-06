@@ -17,11 +17,15 @@ import {AccountRoutes} from './Account/account.routes';
 import { HttpModule } from "@angular/http";
 import { DashboardModule } from "./Dashboard/dashboard.module";
 import { DashboardRoutes } from "./Dashboard/dashboard.routes";
+import { AssetsRoutes } from "./Assets/assets.routes";
+import { AssetsModule } from "./Assets/assets.module";
+import { AssetsService } from "./Assets/services/assets.service";
 
 const appRoutes: Routes = [
     ...AuthRoutes,
     ...AccountRoutes,
-    ...DashboardRoutes
+    ...DashboardRoutes,
+    ...AssetsRoutes,
 ];
 
 
@@ -32,6 +36,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     HttpModule,
+    AssetsModule,
     DashboardModule,
     AuthModule,
     AccountModule,
@@ -43,6 +48,7 @@ const appRoutes: Routes = [
   providers: [
     AuthToken,
     AuthService,
+    AssetsService,
     HttpSettingsService,
     UserService,
     SessionService,

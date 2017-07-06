@@ -1,0 +1,8 @@
+<div class="container" *ngIf="!loading">
+  <h2>Assets</h2>
+  {{ assetslist.results | json }}
+
+  <ul *ngFor="let asset of assetslist.results">
+    <li>{{asset.Name}}</li>
+  </ul>
+</div>
