@@ -1,13 +1,55 @@
 <div class="row">
 <as-navbar></as-navbar>
-  <div class="col-9" style="float:right!important;">
+  <div class="col s10 assets-content">
+      <nav>
+        <div class="nav-wrapper">
+          <div class="col s12">
+            <h3 class="content-title"> Tunaweza Assets </h3>
+          </div>
+        </div>
+      </nav>
     <div class="container" *ngIf="!loading">
-      <h2>Assets</h2>
-      {{ assetslist.results | json }}
+        <table class="highlight assets-table">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>DOA</td>
+                    <td>Serial Number </td>
+                    <td>Price </td>
+                    <td>Depreciation Class </td>
+                    <td>Actions </td>
 
-      <ul *ngFor="let asset of assetslist.results">
-        <li>{{asset.Name}}</li>
-      </ul>
+
+                </tr>
+            </thead>
+            <tbody *ngFor="let asset of assetslist.results">
+                <tr>
+
+                    <td>
+                        {{asset.id}}
+                    </td>
+                    <td>
+                        {{asset.Name}}
+                    </td>
+                    <td>
+                        {{asset.DOA}}
+                    </td>
+                    <td>
+                        {{asset.SerialNumber}}
+                    </td>
+
+                    <td>
+                        {{asset.Price}}
+                    </td>
+                    <td>
+                        {{asset.DepClass}}
+                    </td>
+
+
+                </tr>
+            </tbody>
+        </table>
     </div>
   </div>
 

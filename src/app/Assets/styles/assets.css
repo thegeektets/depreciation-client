@@ -11,7 +11,22 @@ small {
     line-height: 1.428571429;
     color: #999;
 }
-*[contenteditable=true] {
-    outline: none;
-    border: none;
+
+nav {
+  background: rgba(209,31,93,0.9)
+}
+
+.content-title {
+    text-align: center;
+    font-weight: 100;
+    padding-top: 10px;
+    margin-top: auto;
+    font-size: 35px;
+}
+.assets-content {
+  float:right!important;
+  margin-top: 25px;
+}
+.assets-table {
+  text-transform: uppercase;
 }

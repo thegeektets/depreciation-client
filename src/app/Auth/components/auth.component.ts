@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth.service';
 import {AuthToken} from '../../services/AuthToken';
 import {Router} from '@angular/router';
@@ -12,11 +12,10 @@ import {Router} from '@angular/router';
     ]
 })
 
-export class AuthComponent {
+export class AuthComponent implements  OnInit{
     public password: string;
     public username: string;
     public errorMsg: string | void;
-
     private loading: boolean = false;
 
     constructor(
@@ -27,6 +26,12 @@ export class AuthComponent {
         return;
     };
 
+    ngOnInit () {
+      let token = this._authToken.getToken();
+      if(token !== ''){
+          this.loadDashboard();
+      }
+    }
     login() {
         this.loading = true;
         this.errorMsg = null;
