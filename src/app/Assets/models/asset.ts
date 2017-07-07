@@ -1,12 +1,14 @@
 export class Asset {
 
     id: number;
-    Name: string;
-    Price: number;
-    DOA: string;
-    Assignee: number;
-    SerialNumber: string;
-    DepClass:number;
+    title: string;
+    price: number;
+    doa: string;
+    assingee_id: number;
+    assingee: any;
+    serialnumber: string;
+    depreciation_id:number;
+    depreciation:any;
 
     constructor (obj: Object) {
         for (let field in obj) {

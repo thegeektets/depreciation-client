@@ -8,7 +8,7 @@
           </div>
         </div>
       </nav>
-    <div class="container" *ngIf="!loading">
+    <div class="row" *ngIf="!loading">
         <table class="highlight assets-table">
             <thead>
                 <tr>
@@ -18,6 +18,9 @@
                     <td>Serial Number </td>
                     <td>Price </td>
                     <td>Depreciation Class </td>
+                    <td>Depreciation Rate </td>
+                    <td> Assignee </td>
+
                     <td>Actions </td>
 
 
@@ -30,20 +33,26 @@
                         {{asset.id}}
                     </td>
                     <td>
-                        {{asset.Name}}
+                        {{asset.title}}
                     </td>
                     <td>
-                        {{asset.DOA}}
+                        {{asset.doa}}
                     </td>
                     <td>
-                        {{asset.SerialNumber}}
+                        {{asset.serialnumber}}
                     </td>
 
                     <td>
-                        {{asset.Price}}
+                        {{asset.price}}
                     </td>
                     <td>
-                        {{asset.DepClass}}
+                        {{asset.depreciation.dclass}}
+                    </td>
+                    <td>
+                        {{asset.depreciation.rate}}%
+                    </td>
+                    <td>
+                        {{asset.assignee.first_name +" "+asset.assignee.last_name}}
                     </td>
 
 
