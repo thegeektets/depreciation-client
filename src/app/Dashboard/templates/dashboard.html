@@ -1,4 +1,7 @@
-<div class="container">
+<div class="dashboard-page row">
+  <as-navbar></as-navbar>
+  <div class="dashboard-content col s10">
+    <div class="container">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h2>User Profile </h2>
@@ -104,129 +107,7 @@
                                             </div>
                                         </div>
                                  </div>
-                                 <div class="tab-pane" id="2">
-                                   <form [formGroup]="form" [ngStyle]="{'display': loading?'none':''}" novalidate>
-                                     <div class="col-sm-8 col-md-8">
-                                            <div class="form-group center" >
-                                                <h4>Personal Profile</h4><br>
-                                            </div>
-                                            <div class="form-group">
-                                                <input
-                                                        formControlName="full_name"
-                                                        name="full_name"
-                                                        placeholder="Full Name"
-                                                        [ngModel]="userDisplayDetails.full_name"
-                                                        class="form-control"
-                                                        type="text"
-                                                        required
-                                                />
-                                                <p *ngIf="errors && errors.full_name" class="alert alert-danger">{{ errors.full_name }}</p>
-                                            </div>
 
-                                            <div class="form-group">
-                                                <input
-                                                        formControlName="username"
-                                                        name="username"
-                                                        placeholder="Username"
-                                                        [ngModel]="userDisplayDetails.username"
-                                                        class="form-control"
-                                                        type="text"
-                                                        required
-                                                />
-                                                <p *ngIf="errors && errors.username" class="alert alert-danger">{{ errors.username }}</p>
-                                            </div>
-                                            <div class="form-group">
-                                                <input
-                                                        formControlName="email"
-                                                        name="email"
-                                                        placeholder="email address"
-                                                        class="form-control"
-                                                        type="email"
-                                                        required
-                                                />
-                                                <p *ngIf="errors && errors.email" class="alert alert-danger">{{ errors.email }}</p>
-                                            </div>
-                                            <div class="form-group">
-                                                <input
-                                                        formControlName="mobile_number"
-                                                        name="mobile_number"
-                                                        placeholder="mobile number"
-                                                        [ngModel]="userDisplayDetails.mobile_number"
-                                                        class="form-control"
-                                                        type="text"
-                                                        required
-                                                />
-                                                <p *ngIf="errors && errors.mobile_number" class="alert alert-danger">{{ errors.mobile_number }}</p>
-                                            </div>
-                                            <div class="form-group">
-                                                <input
-                                                        formControlName="date_joined"
-                                                        name="date_joined"
-                                                        placeholder="date joined"
-                                                        [ngModel]="userDisplayDetails.date_joined"
-                                                        class="form-control"
-                                                        type="text"
-                                                        required
-                                                />
-                                                <p *ngIf="errors && errors.date_joined" class="alert alert-danger">{{ errors.date_joined }}</p>
-                                            </div>
-                                        </div>
-                                     <div class="col-sm-8 col-md-8">
-                                            <div class="form-group center" >
-                                                <h4>Address</h4><br>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input
-                                                        formControlName="default_billing_address"
-                                                        name="default_billing_address"
-                                                        placeholder="billing address"
-                                                        class="form-control"
-                                                        [ngModel]="userDisplayDetails.default_billing_address"
-                                                        type="text"
-                                                        required
-                                                />
-                                                <p *ngIf="errors && errors.default_billing_address" class="alert alert-danger">{{ errors.default_billing_address }}</p>
-                                            </div>
-                                            <div class="form-group">
-                                                <input
-                                                        formControlName="default_shipping_address"
-                                                        name="default_shipping_address"
-                                                        placeholder="shipping addres"
-                                                        [ngModel]="userDisplayDetails.default_shipping_address"
-                                                        class="form-control"
-                                                        type="text"
-                                                        required
-                                                />
-                                                <p *ngIf="errors && errors.default_shipping_address" class="alert alert-danger">{{ errors.default_shipping_address }}</p>
-                                            </div>
-                                        </div>
-                                     <div class="col-sm-8 col-md-8">
-                                            <div class="form-group center" >
-                                                <h4>Payments</h4><br>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input
-                                                        formControlName="mpesa_phone_number"
-                                                        name="mpesa_phone_number"
-                                                        placeholder="Mpesa Phone Number"
-                                                        [ngModel]="userDisplayDetails.mpesa_phone_number"
-                                                        class="form-control"
-                                                        type="text"
-                                                        required
-                                                />
-                                                <p *ngIf="errors && errors.mpesa_phone_number" class="alert alert-danger">{{ errors.mpesa_phone_number }}</p>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="col-sm-3 pull-right">
-                                                    <button class="btn btn-success btn-block" [disabled]="!form.valid" (click)="saveChanges()"> Save Changes </button>
-                                                </div>
-                                            </div>
-                                     </div>
-
-                                   </form>
-                                 </div>
                             </div>
                         </div>
 
@@ -238,4 +119,6 @@
         </div>
 
     </div>
+</div>
+  </div>
 </div>

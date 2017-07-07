@@ -3,11 +3,12 @@ import { environment } from "../../environments/environment";
 
 @Injectable()
 export class SettingsService {
+    private ENV = environment;
     private devMode = true;
-    private protocol = environment.API_PROTOCOL;
-    private domain = environment.API_DOMAIN;
-    private baseUrl = environment.API_baseUrl;
-    private apiVersion = environment.API_apiVersion;
+    private protocol = this.ENV.API_PROTOCOL;
+    private domain = this.ENV.API_DOMAIN;
+    private baseUrl = this.ENV.API_baseUrl;
+    private apiVersion = this.ENV.API_apiVersion;
     constructor() {
         if (!this.devMode) {
             this.protocol = 'http';

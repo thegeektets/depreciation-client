@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
-import { NavbarComponent } from './index';
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from "./components/navbar.component";
 
 @NgModule({
     declarations: [

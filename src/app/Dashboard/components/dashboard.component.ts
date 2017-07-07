@@ -2,6 +2,8 @@ import { Component, OnInit, Input} from '@angular/core';
 import { SessionService} from '../../services/SessionService';
 import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
 import { ValidationService } from '../../Validators/ValidationService';
+import { RouterLink, Router } from "@angular/router";
+import { NavbarComponent } from "../../navbar/components/navbar.component";
 
 @Component({
     selector: 'as-dashboard',
@@ -9,7 +11,7 @@ import { ValidationService } from '../../Validators/ValidationService';
     styleUrls: [
         '../styles/dashboard.css'
     ],
-    providers: [FormBuilder]
+    providers: [FormBuilder],
 })
 
 export class DashboardComponent implements OnInit {
@@ -21,7 +23,8 @@ export class DashboardComponent implements OnInit {
 
     constructor(
         private _sessionService: SessionService,
-        private fb: FormBuilder
+        private fb: FormBuilder,
+        private _router: Router,
     ) {
         this.isAuthenticated = this._sessionService.isLoggedIn();
         if (this.isAuthenticated) {
@@ -31,6 +34,7 @@ export class DashboardComponent implements OnInit {
     ngOnInit() {
     //
     }
+
 
 
 
