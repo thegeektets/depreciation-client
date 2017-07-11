@@ -45,5 +45,13 @@ export class AssetsComponent implements OnInit {
       });
     }
 
+    editAsset(id) { 
+      console.log(id); 
+    } 
+    deleteAsset(id) { 
+      console.log(id); 
+    } 
+
+
 
 }

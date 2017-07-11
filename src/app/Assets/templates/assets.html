@@ -51,6 +51,13 @@
                         {{asset.assignee.username}}
                     </td>
 
+                    <td> 
+                        <button (click)="editAsset(asset.id)"> Edit </button> 
+                     </td> 
+
+                     <td> 
+                        <button (click)="deleteAsset(asset.id)"> Delete </button> 
+                     </td> 
 
                 </tr>
             </tbody>
