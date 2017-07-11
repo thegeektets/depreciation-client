@@ -1,0 +1,20 @@
+<div class="row">
+<as-navbar></as-navbar>
+  <div class="col s10 assets-content">
+      <nav>
+        <div class="nav-wrapper">
+          <div class="col s12">
+            <h3 class="content-title"> Asset Depreciation </h3>
+          </div>
+        </div>
+      </nav>
+    <div class="row" *ngIf="!loading">
+      <div class="col s6 offset-s3 depreciation_form">
+            <button (click)="calculateDepreciation()" class="btn btn-submit"> Calculate Depreciation </button>
+      </div>
+      <div class="col s8 offset-s2" style="padding: 10px">
+          {{depreciationlist | json}}
+      </div>
+  </div>
+
+</div>

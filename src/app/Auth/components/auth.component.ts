@@ -28,7 +28,7 @@ export class AuthComponent implements  OnInit{
 
     ngOnInit () {
       let token = this._authToken.getToken();
-      if(token !== ''){
+      if(token !== null){
           this.loadDashboard();
       }
     }

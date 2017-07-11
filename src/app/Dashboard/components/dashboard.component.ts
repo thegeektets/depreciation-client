@@ -4,6 +4,7 @@ import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms'
 import { ValidationService } from '../../Validators/ValidationService';
 import { RouterLink, Router } from "@angular/router";
 import { NavbarComponent } from "../../navbar/components/navbar.component";
+import { AuthToken } from "../../services/AuthToken";
 
 @Component({
     selector: 'as-dashboard',
@@ -23,11 +24,14 @@ export class DashboardComponent implements OnInit {
 
     constructor(
         private _sessionService: SessionService,
+        private _authToken: AuthToken,
         private fb: FormBuilder,
         private _router: Router,
     ) {
-        this.isAuthenticated = this._sessionService.isLoggedIn();
-        if (this.isAuthenticated) {
+        let token = this._authToken.getToken();
+        if (token !== null) {
+        } else {
+          this._router.navigateByUrl('');
         }
     }
 

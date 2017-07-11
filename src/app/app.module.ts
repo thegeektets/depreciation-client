@@ -22,12 +22,16 @@ import { AssetsModule } from "./Assets/assets.module";
 import { AssetsService } from "./Assets/services/assets.service";
 import { NavbarModule } from "./navbar/navbar.module";
 import { NavbarComponent } from "./navbar/components/navbar.component";
+import { DepreciationRoutes } from "./Depreciation/depreciation.routes";
+import { DepreciationModule } from "./Depreciation/depreciation.module";
+import { DepreciationService } from "./Depreciation/services/depreciation.service";
 
 const appRoutes: Routes = [
     ...AuthRoutes,
     ...AccountRoutes,
     ...DashboardRoutes,
     ...AssetsRoutes,
+    ...DepreciationRoutes,
 ];
 
 
@@ -41,6 +45,7 @@ const appRoutes: Routes = [
     NavbarModule,
     AssetsModule,
     DashboardModule,
+    DepreciationModule,
     AuthModule,
     AccountModule,
     RouterModule.forRoot(
@@ -53,6 +58,7 @@ const appRoutes: Routes = [
     AuthToken,
     AuthService,
     AssetsService,
+    DepreciationService,
     HttpSettingsService,
     UserService,
     SessionService,
