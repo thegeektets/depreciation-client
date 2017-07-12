@@ -45,11 +45,14 @@
                         {{asset.depreciation.dclass}}
                     </td>
                     <td>
-                        {{asset.depreciation.rate}}%
+                        {{asset.depreciation.rate}}
                     </td>
                     <td>
                         {{asset.assignee.username}}
                     </td>
+                     <td>
+                        <button (click)="editAsset(asset.id)"> Edit </button>
+                     </td>
 
                     <td> 
                         <button (click)="editAsset(asset.id)"> Edit </button> 
