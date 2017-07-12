@@ -48,9 +48,7 @@ export class AssetsComponent implements OnInit {
       console.log(id);
     }
 
-    editAsset(id) { 
-      console.log(id); 
-    } 
+ 
     deleteAsset(id) { 
       console.log(id); 
     } 
