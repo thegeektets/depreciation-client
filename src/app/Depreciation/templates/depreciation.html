@@ -10,7 +10,38 @@
       </nav>
     <div class="row" *ngIf="!loading">
       <div class="col s8 offset-s2" style="padding: 10px">
-          {{depreciationlist | json}}
+          <table>
+              <thead>
+
+              </thead>
+              <tbody *ngFor="let asset of depreciationlist">
+                <tr>
+
+                    <td>
+                        {{asset.title}}
+                    </td>
+                    <td>
+                        {{asset.doa}}
+                    </td>
+                    <td>
+                        {{asset.serialnumber}}
+                    </td>
+
+                    <td>
+                        {{asset.price}}(KES)
+                    </td>
+                    <td>
+                        {{asset.depreciation.rate}}
+                    </td>
+                    <td>
+                        <tr *ngFor="let depreciation of asset.depreciation_results">
+                             <td> {{ depreciation.month }} </td>
+                            <td> {{ depreciation.value }} </td>
+                        </tr>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
       </div>
   </div>
 
