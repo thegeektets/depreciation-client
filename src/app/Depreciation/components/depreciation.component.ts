@@ -31,6 +31,7 @@ export class DepreciationComponent implements OnInit {
     }
 
     ngOnInit() {
+      this.calculateDepreciation();
     }
 
     depreciationCalc() {

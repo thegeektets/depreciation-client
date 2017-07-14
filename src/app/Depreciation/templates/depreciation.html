@@ -9,9 +9,6 @@
         </div>
       </nav>
     <div class="row" *ngIf="!loading">
-      <div class="col s6 offset-s3 depreciation_form">
-            <button (click)="calculateDepreciation()" class="btn btn-submit"> Calculate Depreciation </button>
-      </div>
       <div class="col s8 offset-s2" style="padding: 10px">
           {{depreciationlist | json}}
       </div>
