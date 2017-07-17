@@ -34,10 +34,7 @@
                         {{asset.depreciation.rate}}
                     </td>
                     <td>
-                      {{ asset.results }}
-                    </td>
-                    <td>
-                      {{ asset.depreciation_results[asset.results].value}}
+                      {{ asset.depreciation_results[asset.depreciation_results.length - 1].value}}
                     </td>
                     <td>
                       {{ asset.depreciation_results[0].depreciation }}

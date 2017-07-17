@@ -113,7 +113,7 @@ export class DepreciationComponent implements OnInit {
               }
 
           }
-          this.depreciationlist[i].results = this.depreciationlist[i].depreciation_results.length;
+
       }
     }
     calculateDepreciation() {
