@@ -10,6 +10,7 @@ export class Depreciation {
     depreciation_id:number;
     depreciation:any;
     depreciation_results: any;
+    results:number;
 
 
     constructor (obj: Object) {

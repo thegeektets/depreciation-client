@@ -82,7 +82,8 @@ export class DepreciationComponent implements OnInit {
                   }
                }
              }
-          } else {
+          }
+          else {
               let end_month = 12;
               let start_month = sm;
               let start_year = sy;
@@ -112,6 +113,7 @@ export class DepreciationComponent implements OnInit {
               }
 
           }
+          this.depreciationlist[i].results = this.depreciationlist[i].depreciation_results.length;
       }
     }
     calculateDepreciation() {

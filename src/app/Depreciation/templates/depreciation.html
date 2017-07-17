@@ -9,12 +9,12 @@
         </div>
       </nav>
     <div class="row" *ngIf="!loading">
-      <div class="col s8 offset-s2" style="padding: 10px">
+      <div>
           <table>
               <thead>
 
               </thead>
-              <tbody *ngFor="let asset of depreciationlist">
+              <tbody *ngFor="let asset of depreciationlist;">
                 <tr>
 
                     <td>
@@ -34,10 +34,13 @@
                         {{asset.depreciation.rate}}
                     </td>
                     <td>
-                        <tr *ngFor="let depreciation of asset.depreciation_results">
-                             <td> {{ depreciation.month }} </td>
-                            <td> {{ depreciation.value }} </td>
-                        </tr>
+                      {{ asset.results }}
+                    </td>
+                    <td>
+                      {{ asset.depreciation_results[asset.results].value}}
+                    </td>
+                    <td>
+                      {{ asset.depreciation_results[0].depreciation }}
                     </td>
                 </tr>
             </tbody>
