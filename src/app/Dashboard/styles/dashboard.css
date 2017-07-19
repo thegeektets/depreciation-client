@@ -1,7 +1,30 @@
+
+nav {
+  background: rgba(209,31,93,0.9)
+}
+
+.content-title {
+    text-align: center;
+    font-weight: 100;
+    padding-top: 10px;
+    margin-top: auto;
+    font-size: 35px;
+}
 .dashboard-page {
     font-family: "Raleway";
     height: calc(100vh + 25px);
 }
 .dashboard-content {
+    margin-top: 25px;
     float: right !important;
+}
+.card-title {
+    text-align: center;
+    border-bottom: solid 1px #fff;
+    padding-bottom: 5px;
+}
+.stats {
+  font-size: 21px;
+  padding-bottom: 10px;
+  font-weight: 200;
 }

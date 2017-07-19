@@ -1,7 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { SessionService} from '../../services/SessionService';
 import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
-import { ValidationService } from '../../Validators/ValidationService';
 import { DepreciationService } from "../services/depreciation.service";
 
 @Component({

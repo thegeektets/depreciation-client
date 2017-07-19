@@ -26,6 +26,9 @@
     padding: 0px;
     padding-left: 5px;
 }
+.side-nav ul {
+    background: rgba(209,46,96,0.3);
+}
 .tunaweza_logo{
     background-image: url("../../../assets/tunaweza_logo.png");
     height: 100px;

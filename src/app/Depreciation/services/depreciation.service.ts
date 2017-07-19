@@ -13,6 +13,7 @@ import { Depreciation } from "../models/depreciation";
 export class DepreciationService extends BaseService {
 
     public _basePath = 'assets/';
+    public _depPath = 'depreciation/'
 
     constructor(public http: Http,
                 public _httpSettings: HttpSettingsService,
@@ -42,6 +43,21 @@ export class DepreciationService extends BaseService {
             search: new URLSearchParams(this.makeStringOfParams(params))
         };
         return this.http.get(this._httpSettings.getBaseUrl() + this._basePath + '?startdate='+start_date+'&enddate='+end_date, options)
+            .map(res => {
+                let toReturn = <any>this.singleMap(res);
+                this.singleObject = toReturn;
+                this.singleO.emit(toReturn);
+                return toReturn;
+            })
+            .catch(this.handleError);
+    }
+
+    getDepreciationClasses( params?) {
+      let options: RequestOptionsArgs = {
+            headers: this._httpSettings.getHeaders(),
+            search: new URLSearchParams(this.makeStringOfParams(params))
+        };
+        return this.http.get(this._httpSettings.getBaseUrl() + this._depPath , options)
             .map(res => {
                 let toReturn = <any>this.singleMap(res);
                 this.singleObject = toReturn;

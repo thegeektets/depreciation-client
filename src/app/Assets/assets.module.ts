@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { AssetsComponent } from "./components/assets.component";
 import { NavbarModule } from "../navbar/navbar.module";
+import { AddAssetsComponent } from "./components/add-assets.component";
 
 @NgModule({
     declarations: [
-        AssetsComponent
+        AssetsComponent,
+        AddAssetsComponent,
     ],
     imports: [
         CommonModule,
@@ -15,7 +17,8 @@ import { NavbarModule } from "../navbar/navbar.module";
         NavbarModule,
     ],
     exports: [
-        AssetsComponent
+        AssetsComponent,
+        AddAssetsComponent,
     ],
     providers: [
     ],

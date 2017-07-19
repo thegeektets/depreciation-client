@@ -12,13 +12,11 @@ import {User} from '../models/user';
 
 export class UserService extends BaseService {
 
-    public _basePath = 'auth/user/';
+    public _basePath = 'users/';
     public _registerPath = 'register/';
 
     constructor(public http: Http,
                 public _httpSettings: HttpSettingsService,
-                public _sessionService: SessionService,
-                private _authToken: AuthToken
     ) {
         super(http, _httpSettings);
     }
@@ -35,6 +33,21 @@ export class UserService extends BaseService {
 
     singleMap(res: Response): User {
         return new User(res.json());
+    }
+
+    public get_Assignees(params?): Observable<any> {
+        let options: RequestOptionsArgs = {
+            headers: this._httpSettings.getHeaders(),
+            search: new URLSearchParams(this.makeStringOfParams(params))
+        };
+        return this.http.get(this.getUrl(this._basePath), options)
+            .map(res => {
+                let toReturn = <any>this.singleMap(res);
+                this.singleObject = toReturn;
+                this.singleO.emit(toReturn);
+                return toReturn;
+            })
+            .catch(this.handleError);
     }
 
     public register(data, params?): Observable<any> {

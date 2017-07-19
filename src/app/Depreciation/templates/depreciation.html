@@ -4,7 +4,7 @@
       <nav>
         <div class="nav-wrapper">
           <div class="col s12">
-            <h3 class="content-title"> Asset Depreciation </h3>
+            <h3 class="content-title"> Asset Depreciation Report </h3>
           </div>
         </div>
       </nav>
@@ -12,7 +12,29 @@
       <div>
           <table>
               <thead>
-
+                <tr>
+                  <th>
+                    Asset
+                  </th>
+                  <th>
+                    Date of Acquisition
+                  </th>
+                  <th>
+                    Serial Number
+                  </th>
+                  <th>
+                    Cost of Acquisition
+                  </th>
+                  <th>
+                    Deprecition Rate
+                  </th>
+                  <th>
+                    Value of Asset
+                  </th>
+                  <th>
+                    View Details
+                  </th>
+                </tr>
               </thead>
               <tbody *ngFor="let asset of depreciationlist;">
                 <tr>
@@ -28,7 +50,7 @@
                     </td>
 
                     <td>
-                        {{asset.price}}(KES)
+                        {{asset.price | currency:'KES'}}
                     </td>
                     <td>
                         {{asset.depreciation.rate}}
@@ -37,7 +59,7 @@
                       {{ asset.depreciation_results[asset.depreciation_results.length - 1].value}}
                     </td>
                     <td>
-                      {{ asset.depreciation_results[0].depreciation }}
+                      <button class="waves-effect waves-light btn blue" (click)="viewDetails(asset.id)"> View  Details </button>
                     </td>
                 </tr>
             </tbody>

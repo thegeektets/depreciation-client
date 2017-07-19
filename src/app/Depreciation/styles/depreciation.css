@@ -30,3 +30,25 @@ nav {
   margin: 0px auto;
   display: inherit;
 }
+table {
+    width: 100%;
+    display: table;
+    background: #fff;
+    margin-top: 20px;
+    padding: 10px;
+}
+thead {
+  background: #f5f5f5;
+  text-transform: capitalize;
+}
+tr {
+  border-bottom: 1px solid grey;
+}
+th {
+  padding-left: 10px;
+  font-weight: 300;
+  font-size: 18px;
+}
+td {
+    padding-left: 10px;
+}

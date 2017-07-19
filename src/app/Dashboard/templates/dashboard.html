@@ -1,124 +1,43 @@
 <div class="dashboard-page row">
   <as-navbar></as-navbar>
   <div class="dashboard-content col s10">
-    <div class="container">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h2>User Profile </h2>
+    <nav>
+      <div class="nav-wrapper">
+        <div class="col s12">
+          <h3 class="content-title"> Assets Summary </h3>
         </div>
-    </div>
+      </div>
+    </nav>
     <div *ngIf="!loading" >
-
         <div class="row">
-            <div class="col-lg-12 col-sm-12 col-md-12">
-                <div class="well well-sm">
-                    <div class="row">
-                        <div id="exTab2" class="container">
-                            <ul class="nav nav-tabs">
-                                <li class="active">
-                                    <a  href="#1" data-toggle="tab">Profile</a>
-                                </li>
-                                <li>
-                                    <a href="#2" data-toggle="tab">Edit</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content ">
-                                 <div class="tab-pane active" id="1">
-                                        <div class="col-sm-12 col-md-12">
-                                            <div class="form-group center" >
-                                                <h4>Personal Profile</h4><br>
-                                            </div>
-                                                <div class="form-group">
-                                                    <i class="glyphicon glyphicon-user"></i>
-                                                    Full Name: &nbsp;&nbsp;
-                                                                <span (keyup)="userChanged($event, 'full_name')"
-                                                                     [attr.contenteditable]="true"
-                                                                     [innerHtml]="userDisplayDetails.full_name">
-
-                                                                </span>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <i class="glyphicon glyphicon-user"></i>
-                                                    Username:&nbsp;&nbsp;
-                                                                <span (keyup)="userChanged($event, 'username')"
-                                                                   [attr.contenteditable]="true"
-                                                                   [innerHtml]="userDisplayDetails.username">
-
-                                                                </span>
-                                                </div>
-                                                <div class="form-group">
-                                                    <i class="glyphicon glyphicon-envelope"></i>
-                                                    Email: &nbsp;&nbsp;
-                                                            <span (keyup)="userChanged($event, 'email')"
-                                                                 [attr.contenteditable]="true"
-                                                                 [innerHtml]="userDisplayDetails.email">
-                                                            </span>
-                                                </div>
-                                                <div class="form-group">
-                                                    <i class="glyphicon glyphicon-phone"></i>
-                                                    Phone Number:&nbsp;&nbsp;
-                                                                <span (keyup)="userChanged($event, 'mobile_number')"
-                                                                       [attr.contenteditable]="true"
-                                                                       [innerHtml]="userDisplayDetails.mobile_number">
-                                                                </span>
-                                                </div>
-                                                <div class="form-group">
-                                                    <i class="glyphicon glyphicon-calendar"></i>
-                                                    Date Joined: &nbsp;&nbsp;{{userDisplayDetails.date_joined}}
-                                                </div>
-                                        </div>
-                                        <div class="col-sm-12 col-md-12">
-                                            <div class="form-group center" >
-                                                <h4>Address</h4><br>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <i class="glyphicon glyphicon-home"></i>
-                                                Billing Address: &nbsp;&nbsp;
-                                                                <span (keyup)="userChanged($event, 'default_billing_address')"
-                                                                        [attr.contenteditable]="true"
-                                                                        [innerHtml]="userDisplayDetails.default_billing_address">
-                                                                </span>
-                                            </div>
-                                            <div class="form-group">
-                                                <i class="glyphicon glyphicon-home"></i>
-                                                Shipping Address: &nbsp;&nbsp;
-                                                                <span (keyup)="userChanged($event, 'default_shipping_address')"
-                                                                        [attr.contenteditable]="true"
-                                                                        [innerHtml]="userDisplayDetails.default_shipping_address">
-                                                                </span>
-                                            </div>
-
-
-                                        </div>
-                                        <div class="col-sm-12 col-md-12">
-                                            <div class="form-group center" >
-                                                <h4>Payments</h4><br>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <i class="glyphicon glyphicon-envelope"></i>
-                                                 Mpesa Mobile Number: &nbsp;&nbsp;
-                                                                <span (keyup)="userChanged($event, 'mpesa_phone_number')"
-                                                                        [attr.contenteditable]="true"
-                                                                        [innerHtml]="userDisplayDetails.mpesa_phone_number">
-                                                                </span>
-                                            </div>
-                                        </div>
-                                 </div>
-
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
+          <div class="col s12 m6">
+            <div class="card teal darken-1">
+              <div class="card-content white-text">
+                <span class="card-title"> Total Assets Cost </span>
+                <p class="stats"> Number of Assets :  {{depreciationlist.length}}</p>
+                <p class="stats"> Total Assets Cost : {{total_assets_cost | currency:'KES'}}</p>
+              </div>
             </div>
-
+          </div>
+          <div class="col s12 m6">
+            <div class="card teal darken-1">
+              <div class="card-content white-text">
+                <span class="card-title"> Total Assets Value </span>
+                <p class="stats"> Number of Assets : {{depreciationlist.length}} </p>
+                <p class="stats"> Total Assets Value : {{total_assets_value | currency:'KES'}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 m6 push-m3">
+            <div class="card teal darken-1">
+              <div class="card-content white-text">
+                <span class="card-title"> Total Assets Depreciation </span>
+                <p class="stats"> Number of Assets : {{depreciationlist.length}} </p>
+                <p class="stats"> Total Depreciation Cost : {{total_depreciation_value | currency:'KES'}}</p>
+              </div>
+            </div>
+          </div>
         </div>
-
     </div>
-</div>
   </div>
 </div>
