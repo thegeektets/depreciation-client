@@ -69,7 +69,10 @@ export class DashboardComponent implements OnInit {
                let k = mm - sm;
                for(let m =1 ; m <= k; m++ ) {
                   let depreciation = cost * rate;
-                  value = cost - (depreciation * m);
+                   value -= depreciation;
+                  if(value < 0){
+                      value  = 0;
+                    }
 
                   if(typeof (this.depreciationlist[i].depreciation_results) !== 'undefined') {
                       this.depreciationlist[i].depreciation_results.push({'month':(sm+m)+'-'+sy , 'value':value , 'depriciation': depreciation});
@@ -96,7 +99,10 @@ export class DashboardComponent implements OnInit {
 
                  for(let m =0 ; m <= k; m++ ) {
                     let depreciation = cost * rate;
-                    value = cost - (depreciation * m);
+                    value -= depreciation;
+                    if(value < 0){
+                      value  = 0;
+                    }
 
                     if(typeof (this.depreciationlist[i].depreciation_results) !== 'undefined') {
                         this.depreciationlist[i].depreciation_results.push({'month':(start_month+m)+'-'+start_year , 'value':value , 'depriciation': depreciation});

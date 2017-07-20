@@ -68,3 +68,20 @@ select {
     margin-top: 15px;
     padding-bottom: 50px !important;
 }
+a.btn-floating.btn-large.waves-effect.waves-light.red {
+    background-color: #d4336b !important;
+}
+.alert.alert-danger.alert-dismissable {
+    text-align: center;
+    color: #fff;
+    font-family: "Raleway";
+    background: #FFD64D;
+    padding: 10px;
+}
+.alert.alert-success.alert-dismissable {
+    text-align: center;
+    color: #fff;
+    font-family: "Raleway";
+    background: teal;
+    padding: 10px;
+}

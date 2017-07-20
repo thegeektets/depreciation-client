@@ -10,39 +10,43 @@
       </nav>
     <div class="row" *ngIf="!loading">
       <div class="col s12 m8 offset-m2 new-asset">
-        <form>
+        <div *ngIf="errorMsg" class="alert alert-danger alert-dismissable">
+                        {{errorMsg}}
+        </div>
+        <div *ngIf="sucsMsg" class="alert alert-success alert-dismissable">
+                        {{sucsMsg}}
+        </div>
+        <form [formGroup]="assetForm" (ngSubmit)="addNewAsset()">
           <div class="input-field col s12">
-              <input id="title" type="text" class="validate">
+              <input id="title" type="text" class="validate" name="title" formControlName="title">
               <label for="title">Asset Title</label>
           </div>
           <div class="input-field col s12">
-              <input id="price" type="text" class="validate">
+              <input id="price" type="number" class="validate" formControlName="price" name="price">
               <label for="price">Cost of Acquisition</label>
           </div>
           <div class="input-field col s12">
-              <input placeholder="mm/dd/yyyy" id="doa" type="text" class="validate">
+              <input placeholder="yyyy-mm-dd" id="doa" type="text" class="validate" formControlName="doa" name="doa">
               <label for="doa">Date of Acquisition</label>
           </div>
           <div class="input-field col s12">
-              <input id="serialnumber" type="text" class="validate">
+              <input id="serialnumber" type="text" class="validate" name="serialnumber" formControlName="serialnumber">
               <label for="serialnumber">Serial Number </label>
           </div>
           <div class="input-field col s12">
-              <select id="assignee_id" name="assignee_id"  *ngFor="let user of assignee_list.results; let i = index">
-                <option value="" disabled selected *ngIf="i === 0"> Assignee </option>
-                <option value="{{user.id}}"> {{user.username}}</option>
+              <select id="assignee_id" name="assignee_id" formControlName="assignee_id">
+                <option disabled selected value=""> Assignee </option>
+                <option value="{{user.id}}" *ngFor="let user of assignee_list.results;"> {{user.username}}</option>
               </select>
           </div>
           <div class="input-field col s12">
-              <select id="depreciation_id" name="depreciation_id">
-                <option value="" disabled selected> Depreciation </option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
+              <select id="depreciation_id" name="depreciation_id" formControlName="depreciation_id">
+                <option disabled selected value=""> Depreciation </option>
+                <option value="{{class.id}}" *ngFor="let class of classes_list.results; let i = index"> {{class.dclass}}</option>
               </select>
           </div>
           <div class="input-field right">
-            <button class="waves-effect waves-light btn blue" (click)="viewAsset(asset.id)"> Submit Asset </button>
+            <button class="waves-effect waves-light btn blue" type="submit"> Submit Asset </button>
           </div>
 
 

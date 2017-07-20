@@ -52,3 +52,33 @@ th {
 td {
     padding-left: 10px;
 }
+.bottom-fab {
+    position: fixed;
+    bottom: 5vh;
+    left: 95vw;
+}
+tfoot {
+    background: #f5f5f5;
+}
+tfoot th {
+    font-weight: 500 !important;
+    text-transform: uppercase;
+}
+.export {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.alert.alert-danger.alert-dismissable {
+    text-align: center;
+    color: #fff;
+    font-family: "Raleway";
+    background: #FFD64D;
+    padding: 10px;
+}
+.alert.alert-success.alert-dismissable {
+    text-align: center;
+    color: teal;
+    font-family: "Raleway";
+    background: #FFD64D;
+    padding: 10px;
+}

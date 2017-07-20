@@ -13,7 +13,7 @@ import { Depreciation } from "../models/depreciation";
 export class DepreciationService extends BaseService {
 
     public _basePath = 'assets/';
-    public _depPath = 'depreciation/'
+    public _depPath = 'depreciation/';
 
     constructor(public http: Http,
                 public _httpSettings: HttpSettingsService,

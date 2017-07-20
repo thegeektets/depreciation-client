@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { NavbarModule } from "../navbar/navbar.module";
 import { DepreciationComponent } from "./components/depreciation.component";
+import { DepreciationClassesComponent } from "./components/depreciation-classes.component";
 
 @NgModule({
     declarations: [
-        DepreciationComponent
+        DepreciationComponent,
+        DepreciationClassesComponent,
     ],
     imports: [
         CommonModule,
@@ -15,7 +17,8 @@ import { DepreciationComponent } from "./components/depreciation.component";
         NavbarModule,
     ],
     exports: [
-        DepreciationComponent
+        DepreciationComponent,
+        DepreciationClassesComponent,
     ],
     providers: [
     ],

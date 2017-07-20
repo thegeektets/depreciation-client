@@ -10,6 +10,9 @@
       </nav>
     <div class="row" *ngIf="!loading">
       <div>
+          <div class="export right">
+              <button class="waves-effect waves-light btn red" (click)="exporttoPdf()"> Export to PDF </button>
+          </div>
           <table>
               <thead>
                 <tr>
@@ -26,18 +29,22 @@
                     Cost of Acquisition
                   </th>
                   <th>
-                    Deprecition Rate
+                    Depreciation Rate
+                  </th>
+
+                  <th>
+                    Monthly Depreciation
+                  </th>
+                  <th>
+                    Total Depreciation
                   </th>
                   <th>
                     Value of Asset
                   </th>
-                  <th>
-                    View Details
-                  </th>
                 </tr>
               </thead>
               <tbody *ngFor="let asset of depreciationlist;">
-                <tr>
+                <tr  (click)="viewDetails(asset.id)">
 
                     <td>
                         {{asset.title}}
@@ -56,13 +63,28 @@
                         {{asset.depreciation.rate}}
                     </td>
                     <td>
-                      {{ asset.depreciation_results[asset.depreciation_results.length - 1].value}}
+                       {{ asset.depreciation_results[asset.depreciation_results.length - 1].depriciation  | currency:'KES'}}
                     </td>
                     <td>
-                      <button class="waves-effect waves-light btn blue" (click)="viewDetails(asset.id)"> View  Details </button>
+                        {{ asset.price - asset.depreciation_results[asset.depreciation_results.length - 1].value  | currency:'KES'}}
+                    </td>
+                    <td>
+                      {{ asset.depreciation_results[asset.depreciation_results.length - 1].value  | currency:'KES' }}
                     </td>
                 </tr>
-            </tbody>
+               </tbody>
+            <tfoot>
+                <tr>
+                    <th>Total </th>
+                    <th></th>
+                    <th></th>
+                    <th> {{ total_assets_cost | currency:'KES' }} </th>
+                    <th></th>
+                    <th></th>
+                    <th> {{ total_depreciation_value | currency:'KES' }} </th>
+                    <th> {{ total_assets_value | currency:'KES' }}</th>
+                </tr>
+            </tfoot>
           </table>
       </div>
   </div>
